@@ -1,32 +1,32 @@
 import { FormattedMessage, IntlProvider } from "react-intl";
-import { WikiContent, Links } from './Wikipedia';
+import { WikiContent, Links, Title } from './Wikipedia';
+import styled from 'styled-components';
 
 export default function WikipediaExperience() {
   return (
     <WikiContent>
     <div>
-      <h3>
+      <Title>
         <FormattedMessage
           id="wiki.RA"
           defaultMessage="研究助理"            
         />
-      </h3>
+      </Title>
       <p>
       <FormattedMessage
         id="wiki.TMU"
         defaultMessage="臺北醫學大學"            
-      /><br/>
-        2019/02 - 2021/06
+      /><br/> 2019/02 - 2021/06 
       </p>
       
     </div>
     <div>
-      <h3>
+      <Title>
         <FormattedMessage
           id="wiki.frontEndIntern"
           defaultMessage="前端實習生"            
         />
-      </h3>
+      </Title>
       <p>
         <FormattedMessage
           id="wiki.Foxconn"
