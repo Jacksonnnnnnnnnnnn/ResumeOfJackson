@@ -7,9 +7,9 @@ export default function WikipediaSkillsAndOthers() {
         <b>
           <FormattedMessage
             id="wiki.Skills"
-            defaultMessage="電腦技能："            
+            defaultMessage="電腦技能"            
           />
-        </b> : HTML、CSS、JavaScript、React.js、Git、MySQL、Gephi
+        </b> : HTML、CSS、JavaScript、Node.js、React.js、jQuery、Bootstrap、Git、MySQL、Gephi
       <WikiContent>
         <b>
           <FormattedMessage

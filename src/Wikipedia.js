@@ -120,10 +120,15 @@ const BottomContent = styled.div`
   text-decoration: none;
 `
 
+const Title = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+`
+
 export { 
   ToggleButton, WikiContent, Links, WikiInfoBox,
-  WikiBoxTr, WikiBoxTh, WikiBoxSubTh_2, 
-  WikiBoxSubTh, WikiBoxSubRight, WikiBoxSubLeft 
+  WikiBoxTr, WikiBoxTh, WikiBoxSubTh_2, WikiBoxSubTh,
+  WikiBoxSubRight, WikiBoxSubLeft, Title
 }
 
 

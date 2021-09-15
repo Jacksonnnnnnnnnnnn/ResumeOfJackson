@@ -1,15 +1,15 @@
 import { FormattedMessage, IntlProvider } from "react-intl";
-import { WikiContent, Links } from './Wikipedia';
+import { WikiContent, Links, Title } from './Wikipedia';
 
 export default function WikipediaEdu () {
   return (
     <WikiContent>
-    <h3>
+    <Title>
       <FormattedMessage
         id="wiki.TMU"
         defaultMessage="臺北醫學大學"            
       />
-    </h3>
+    </Title>
     <p>
       <Links href='http://gimi.tmu.edu.tw/main.php' target="_blank">
         <FormattedMessage
@@ -28,12 +28,12 @@ export default function WikipediaEdu () {
     <br/>
     2019/09 - 2021/06
     </p>
-    <h3>
+    <Title>
       <FormattedMessage
         id="wiki.NTUNHS"
         defaultMessage="國立臺北護理健康大學"            
       />
-    </h3>
+    </Title>
     <p>
       <Links href='https://tinyurl.com/37zv2pxu'>
         <FormattedMessage
@@ -44,12 +44,12 @@ export default function WikipediaEdu () {
     <br/>
     2015/09 - 2019/06
     </p>
-    <h3>
+    <Title>
       <FormattedMessage
         id="wiki.LWSSS"
         defaultMessage="香港中華傳道會劉永生中學"            
       />
-    </h3>
+    </Title>
     <p>
       <FormattedMessage
         id="wiki.ICT+ECON"
