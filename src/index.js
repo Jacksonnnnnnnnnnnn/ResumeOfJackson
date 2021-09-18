@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Wikipedia from './Wikipedia';
 import reportWebVitals from './reportWebVitals';
-import Game from './practice/5sonChess';
-// import Game from './practice/OOXX';
 
 ReactDOM.render(
     <Wikipedia/>,
