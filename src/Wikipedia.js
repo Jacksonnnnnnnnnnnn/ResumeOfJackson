@@ -178,13 +178,25 @@ export default function Wikipedia () {
               defaultMessage="李彥志 個人履歷"            
             />
           </WikiTitle>
-          <h3>應徵職位：110年度研發替代役 - 前端工程師  </h3>
+          <h3>應徵職位：110年度研發替代役 - Web 開發工程師  </h3>
           <WikiContent>
             <p>
               <FormattedMessage
                 id="wiki.titleContent"
-                defaultMessage="李彥志（ 英語：Yen-Chih Li Jackson，1996年4月4日 -），臺北醫學大學醫學資訊所碩士。大四時曾任前端實習生，碩士在學期間主要研究醫療資訊標準 - FHIR，並協助維護新北市雙和醫院內外科病房的相關儀器、建立該單位的研究記錄系統。在碩士的學習過程中，察覺自己對前端較有興趣"            
-              />，因此在碩二下時報名 Huli 老師的<Links href="https://bootcamp.lidemy.com/">第五期程式導師計劃</Links>，透過線上課程精進自己對前端的知識。
+                defaultMessage="李彥志（ 英語：Yen-Chih Li Jackson，1996年4月4日 -），臺北醫學大學醫學資訊所碩士。大四時曾任前端實習生，碩士在學期間主要研究醫療資訊標準 - FHIR，並協助維護新北市雙和醫院內外科病房的相關儀器、建立該單位的研究記錄系統。"            
+              /><FormattedMessage 
+                id="wiki.titleContent2"
+                defaultMessage="在碩士的學習過程中，察覺自己對前端較有興趣，因此在碩二下時報名 Huli 老師的"
+              /><Links href="https://bootcamp.lidemy.com/">
+                  <FormattedMessage
+                    id="wiki.lidemy5th"
+                    defaultMessage="第五期程式導師計劃"
+                  />
+                </Links>
+                <FormattedMessage
+                  id="wiki.titleContent3"
+                  defaultMessage="，透過線上課程精進自己對前端的知識。"
+                />
             </p>
           </WikiContent>
           {/* personal information box */}
