@@ -32,7 +32,22 @@ export default function WikipediaSkillsAndOthers() {
             id="wiki.language"
             defaultMessage="語言"            
           />
-        </b> : 粵語（精通）、國語（精通）、英語（中上）、台語（略懂）
+        </b> : <FormattedMessage
+            id="wiki.Cantonese"
+            defaultMessage="粵語（精通）"            
+          />、
+          <FormattedMessage
+            id="wiki.MandarinChinese"
+            defaultMessage="國語（精通）"            
+          />、
+          <FormattedMessage
+            id="wiki.English"
+            defaultMessage="英語（中上）"            
+          />、
+          <FormattedMessage
+            id="wiki.TaiwaneseHokkien"
+            defaultMessage="台語（略懂）"            
+          />
       </WikiContent>
       <WikiContent>
         <b>

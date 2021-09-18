@@ -16,7 +16,7 @@ export default function WikipediaExperience() {
       <FormattedMessage
         id="wiki.TMU"
         defaultMessage="臺北醫學大學"            
-      /><br/> 2019/02 - 2021/06 
+      /><br/> 2020/02 - 2021/06 
       </p>
       
     </div>
