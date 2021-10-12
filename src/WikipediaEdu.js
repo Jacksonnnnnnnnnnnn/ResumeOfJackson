@@ -1,4 +1,4 @@
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { WikiContent, Links, Title } from './Wikipedia';
 
 export default function WikipediaEdu () {

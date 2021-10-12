@@ -1,6 +1,5 @@
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { WikiContent, Links, Title } from './Wikipedia';
-import styled from 'styled-components';
 
 export default function WikipediaExperience() {
   return (
@@ -30,7 +29,7 @@ export default function WikipediaExperience() {
       <p>
         <FormattedMessage
           id="wiki.Foxconn"
-          defaultMessage="鴻海科技集團健康事業群(桂綸生技股份有限公司)"            
+          defaultMessage="鴻海科技集團健康事業群(佳綸生技股份有限公司)"            
         />
         <br/>
         <FormattedMessage

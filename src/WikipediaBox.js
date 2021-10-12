@@ -1,4 +1,4 @@
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { WikiInfoBox, WikiBoxTr, WikiBoxTh, WikiBoxSubTh_2, WikiBoxSubTh, WikiBoxSubRight, WikiBoxSubLeft } from './Wikipedia';
 import styled from 'styled-components';
 import myIcon from './pic/me.jpg';
