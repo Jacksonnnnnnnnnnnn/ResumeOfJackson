@@ -1,4 +1,4 @@
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { useState } from 'react';
 import { ToggleButton, WikiContent, Links } from './Wikipedia';
 import styled from 'styled-components';
@@ -10,14 +10,21 @@ const SmallerContent = styled.p`
 function SmallProject() {
   return (
     <SmallerContent>
-      <FormattedMessage
-        id="Expo"
-        defaultMessage="2020 台灣醫療科技展 - 北醫大展攤之網頁"
-      />
-      ：
-      <Links href='https://treportx.com/' target="_blank">
-        TMU - AI Report System for Ultrasound
-      </Links> ( jQuery + BootStrap )
+      
+        <FormattedMessage
+          id="PracticeOfReact"
+          defaultMessage="React 實作 (切版及 hooks)"
+        /> : <Links href='https://jacksonnnnnnnnnnnn.github.io/react-todo-list/'>Todo List</Links>、<Links href='https://jacksonnnnnnnnnnnn.github.io/react-gomoku/'>五子棋</Links>、<Links href='https://github.com/Jacksonnnnnnnnnnnn/ResumeOfJackson' target="_blank">Resume Website</Links>
+      <WikiContent>
+        <FormattedMessage
+          id="Expo"
+          defaultMessage="2020 台灣醫療科技展 - 北醫大展攤之網頁"
+        />
+        ：
+        <Links href='https://treportx.com/' target="_blank">
+          TMU - AI Report System for Ultrasound
+        </Links> ( jQuery + BootStrap )
+      </WikiContent>
       <WikiContent>
       <Links href='https://github.com/Jacksonnnnnnnnnnnn/ncubbm2' target="_blank">
         <FormattedMessage
@@ -25,12 +32,6 @@ function SmallProject() {
           defaultMessage="雙和醫院研究記錄系統手機版"
         />
       </Links> ( JAVA + PHP )
-      </WikiContent>
-      <WikiContent>
-        <FormattedMessage
-          id="PracticeOfReact"
-          defaultMessage="React 切版練習及 hooks 練習：Todo List"
-        />、<Links href='https://github.com/Jacksonnnnnnnnnnnn/ResumeOfJackson' target="_blank">Resume Website</Links>
       </WikiContent>
       <WikiContent>
         <Links href='https://hackmd.io/@B_eycs2AQPm4JU3hALkP8g' target="_blank">HackMD - Notes of FrontEnd</Links>

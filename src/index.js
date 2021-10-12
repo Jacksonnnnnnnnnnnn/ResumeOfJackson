@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Wikipedia from './Wikipedia';
 import reportWebVitals from './reportWebVitals';
+import Wikipedia from './Wikipedia';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
     <Wikipedia/>,
-    // <Game/>,
   document.getElementById('root')
 );
 

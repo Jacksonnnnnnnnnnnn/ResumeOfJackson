@@ -178,7 +178,6 @@ export default function Wikipedia () {
               defaultMessage="李彥志 個人履歷"            
             />
           </WikiTitle>
-          <h3>應徵職位：110年度研發替代役 - Web 開發工程師  </h3>
           <WikiContent>
             <p>
               <FormattedMessage
