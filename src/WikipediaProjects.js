@@ -10,11 +10,16 @@ const SmallerContent = styled.p`
 function SmallProject() {
   return (
     <SmallerContent>
-      
+      <FormattedMessage
+        id="Website"
+        defaultMessage="Website"
+      /> : <Links href='https://tinyurl.com/bdecvcsz' target="_blank">Top 5 Twitch Streaming</Links> ( API application )、<Links href='https://tinyurl.com/ycks4fsw' target="_blank">留言板</Links> ( Login and Users Function )、<Links href='https://tinyurl.com/yckpm7nw' target="_blank"> 陽春 Blog </Links>
+      <WikiContent>
         <FormattedMessage
           id="PracticeOfReact"
           defaultMessage="React 實作 (切版及 hooks)"
-        /> : <Links href='https://jacksonnnnnnnnnnnn.github.io/react-todo-list/'>Todo List</Links>、<Links href='https://jacksonnnnnnnnnnnn.github.io/react-gomoku/'>五子棋</Links>、<Links href='https://github.com/Jacksonnnnnnnnnnnn/ResumeOfJackson' target="_blank">Resume Website</Links>
+        /> : <Links href='https://jacksonnnnnnnnnnnn.github.io/react-todo-list/' target="_blank">Todo List</Links>、<Links href='https://jacksonnnnnnnnnnnn.github.io/react-gomoku/' target="_blank"><FormattedMessage id='Gomoku' defaultMessage='五子棋'/></Links>、<Links href='https://github.com/Jacksonnnnnnnnnnnn/ResumeOfJackson' target="_blank">Resume Website</Links>
+      </WikiContent>
       <WikiContent>
         <FormattedMessage
           id="Expo"
@@ -46,7 +51,7 @@ export default function WikipediaProjects () {
   return (
     <WikiContent>
         <b>
-          <Links href='https://tinyurl.com/8tm9t9zt' target="_blank">
+          <Links href='https://tinyurl.com/2y22ftjw' target="_blank">
             <FormattedMessage
               id="wiki.thesisName"
               defaultMessage="應用 FHIR 格式於臨床報告系統：以頸動脈超音波報告為例。"            
