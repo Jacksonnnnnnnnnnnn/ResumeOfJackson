@@ -28,7 +28,7 @@ export default function WikipediaBox() {
         <WikiBoxSubTh colSpan={2}>
           <FormattedMessage
             id="wiki.boxSubtitle"
-            defaultMessage="研究所畢業新鮮人"            
+            defaultMessage="萬芳醫院 - 前端工程師"            
           />
         </WikiBoxSubTh>
       </WikiBoxTr>
@@ -76,7 +76,7 @@ export default function WikipediaBox() {
           </Span>
           <FormattedMessage
             id="wiki.BornHongKong"
-            defaultMessage="香港 1996/04/04 (25歲)"            
+            defaultMessage="香港"            
           />
         </WikiBoxSubRight>
       </WikiBoxTr>
