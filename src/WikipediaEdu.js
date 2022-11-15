@@ -11,7 +11,7 @@ export default function WikipediaEdu () {
       />
     </Title>
     <p>
-      <Links href='http://gimi.tmu.edu.tw/main.php' target="_blank">
+      <Links href='https://gibi.tmu.edu.tw/' target="_blank">
         <FormattedMessage
           id="wiki.GIMI"
           defaultMessage="醫學資訊所碩士"            
@@ -35,7 +35,7 @@ export default function WikipediaEdu () {
       />
     </Title>
     <p>
-      <Links href='https://tinyurl.com/37zv2pxu'>
+      <Links href='https://tinyurl.com/v87v6rwa' target="_blank">
         <FormattedMessage
           id="wiki.DHCM"
           defaultMessage="健康事業管理系 - 主修醫療資訊學程"            

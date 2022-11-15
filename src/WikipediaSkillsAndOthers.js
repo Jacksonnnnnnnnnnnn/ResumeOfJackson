@@ -16,7 +16,7 @@ export default function WikipediaSkillsAndOthers() {
             id="wiki.license"
             defaultMessage="證照"            
           />
-        </b> : TOEIC 735（2016）、MOS EXCEL（2016）、醫療資訊管理師證照（2018）
+        </b> : TOEIC 835（2021）、MOS EXCEL（2016）、醫療資訊管理師證照（2018）
       </WikiContent>
       <WikiContent>
         <b>
