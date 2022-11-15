@@ -7,6 +7,20 @@ export default function WikipediaExperience() {
     <div>
       <Title>
         <FormattedMessage
+          id="FE"
+          defaultMessage="前端工程師"            
+        />
+      </Title>
+      <p>
+      <FormattedMessage
+        id="WFH-IT"
+        defaultMessage="臺北市立萬芳醫院 資訊室"            
+      /><br/> 2022/05 - present 
+      </p> 
+    </div>  
+    <div>
+      <Title>
+        <FormattedMessage
           id="wiki.RA"
           defaultMessage="研究助理"            
         />

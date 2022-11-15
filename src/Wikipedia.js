@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 // import { MEDIA_QUERY_MD, MEDIA_QUERY_LG } from './constants/style';
 import logo from './pic/zhwiki2.png';
 import { FormattedMessage, IntlProvider } from "react-intl";
@@ -9,16 +9,19 @@ import WikipediaBox from './WikipediaBox';
 import WikipediaExperience from './WikipediaExperience';
 import WikipediaSkillsAndOthers from './WikipediaSkillsAndOthers';
 
+import { GlobalStyles } from "./GlobalStyles"
+import { lightTheme, darkTheme } from "./Themes"
+
 const WikiWrapper = styled.div`
   display: flex;
-  background-color:#f6f6f6;
+  // background-color:#f6f6f6;
   // overflow-y: scroll;
 `
 
 const WikiLeftBar = styled.div`
   min-width: 160px;
   @media(max-width: 768px) {
-    min-width: 100px;
+    min-width: 90px;
   }
 `
 
@@ -26,8 +29,8 @@ const Logo = styled.img`
   width: 135px;
   height: 155px;
   @media(max-width: 768px) {
-    width: 101px;
-    height: 116px;
+    width: 85px;
+    height: 100px;
   }
 `
 
@@ -43,7 +46,7 @@ const WikiMain = styled.div`
   border: 1px solid #a7d7f9;
   border-right-width: 0;
   width: 100%;
-  background-color: #ffffff;
+  // background-color: #ffffff;
   padding: 1em;
   line-height: 1.6;
 `
@@ -104,8 +107,9 @@ const WikiBoxSubTh_2 = styled.th`
 `
 
 const Links = styled.a`
-  text-decoration: none;
-  color: #0645ad;
+  // text-decoration: none;
+  // color: #0645ad;
+  
 `
 
 const ToggleButton = styled.span`
@@ -133,9 +137,15 @@ export {
 
 
 export default function Wikipedia () {
+  // For theme
+  const [theme, setTheme] = useState('light')
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
+  // For i18n
   const [lang, setLang] = useState('cn')
   const [locale, setLocale] = useState('cn')
-
   useEffect(() => {
     async function fetchData() {
       const res = await fetch(`./lang/${lang}.json`)
@@ -146,108 +156,115 @@ export default function Wikipedia () {
   },[lang])
 
   return (
-    <IntlProvider
-      messages={locale}
-    >
-      <WikiWrapper>
-        <WikiLeftBar>
-          {/* <img src={icon} width="135px" height="155px"/> */}
-          <Logo src={logo}/>
-          <WikiLeftBarContent>
-            <FormattedMessage
-              id="wiki.home"
-              defaultMessage="首頁"            
-            />
-          </WikiLeftBarContent>
-          <WikiLeftBarContent>
-            <select
-              value={lang}
-              onChange={(e) => {
-                setLang(e.target.value);
-              }}
-            >
-              <option value="en">English</option>
-              <option value="cn">中文</option>
-            </select>
-          </WikiLeftBarContent>
-        </WikiLeftBar>
-        <WikiMain>
-          <WikiTitle>
-            <FormattedMessage
-              id="wiki.title"
-              defaultMessage="李彥志 個人履歷"            
-            />
-          </WikiTitle>
-          <WikiContent>
-            <p>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+      <GlobalStyles/>
+      <IntlProvider
+        messages={locale}
+      >
+        <WikiWrapper>
+          <WikiLeftBar>
+            {/* <img src={icon} width="135px" height="155px"/> */}
+            <Logo src={logo}/>
+            <WikiLeftBarContent>
               <FormattedMessage
-                id="wiki.titleContent"
-                defaultMessage="李彥志（ 英語：Yen-Chih Li, Jackson ），現任台北市立萬芳醫院-前端工程師，畢業於臺北醫學大學醫學資訊所。碩士主要研究醫療資訊標準 - FHIR，並協助維護新北市雙和醫院內外科病房的研究相關儀器、建立該單位的研究記錄系統。"            
-              /><FormattedMessage 
-                id="wiki.titleContent2"
-                defaultMessage="在碩士的學習過程中，察覺自己對前端較有興趣，因此在碩二下時報名 Huli 老師的"
-              /><Links href="https://bootcamp.lidemy.com/">
-                  <FormattedMessage
-                    id="wiki.lidemy5th"
-                    defaultMessage="第五期程式導師計劃"
-                  />
-                </Links>
+                id="wiki.home"
+                defaultMessage="首頁"            
+              />
+            </WikiLeftBarContent>
+            <WikiLeftBarContent>
+              <select
+                value={lang}
+                onChange={(e) => {
+                  setLang(e.target.value);
+                }}
+              >
+                <option value="en">English</option>
+                <option value="cn">中文</option>
+              </select>
+              <br/><br/>
+              <button onClick={themeToggler}>Switch Theme</button>
+            </WikiLeftBarContent>
+          </WikiLeftBar>
+          <WikiMain>
+            <WikiTitle>
+              <FormattedMessage
+                id="wiki.title"
+                defaultMessage="李彥志 個人履歷"            
+              />
+            </WikiTitle>
+            <WikiContent>
+              <p>
                 <FormattedMessage
-                  id="wiki.titleContent3"
-                  defaultMessage="，透過線上課程精進自己對前端的知識。"
-                />
-            </p>
-          </WikiContent>
-          {/* personal information box */}
-          <WikipediaBox/>
-          <WikiSubTitle>
-            <FormattedMessage
-                  id="wiki.education"
-                  defaultMessage="教育程度"            
-            />  
-          </WikiSubTitle>
-          {/* education information box */}
-            <WikipediaEdu/>
-          <WikiSubTitle>
-            <FormattedMessage
-              id="wiki.workExperience"
-              defaultMessage="工作經歷"            
-            />
-          </WikiSubTitle>
-          {/* work experience information */}
-            <WikipediaExperience/>
-          <WikiSubTitle>
-            <FormattedMessage
-              id="wiki.Projects"
-              defaultMessage="資訊相關作品及練習"            
-            />
-          </WikiSubTitle>
-          {/* Projects information */}
-            <WikipediaProjects/>
-            <br/>
-          <WikiSubTitle>
-            <FormattedMessage
-              id="wiki.SkillsAndOthers"
-              defaultMessage="專長與其他經歷"            
-            />
-          </WikiSubTitle>
-          {/* Skills and others information */}
-            <WikipediaSkillsAndOthers/>
-            <br/>
-          <WikiSubTitle>
-            <FormattedMessage
-              id="wiki.Contact"
-              defaultMessage="聯絡方式"            
-            />
-          </WikiSubTitle>
-          <WikiContent>
-            E-mail：m610108008@tmu.edu.tw <br/>
-            Phone：0968090763 <br/>
-            LinkedIn : <Links href='https://www.linkedin.com/in/yc-li-7aa68315a/' target="_blank">linkedin.com/in/yc-li-7aa68315a/</Links>
-          </WikiContent>
-        </WikiMain>
-      </WikiWrapper>
-      <BottomContent><Links href="https://www.cleanpng.com/png-wikipedia-logo-encyclopedia-wikimedia-foundation-e-1334294/preview.html">logo source</Links></BottomContent>
-    </IntlProvider>
+                  id="wiki.titleContent"
+                  defaultMessage="李彥志（ 英語：Yen-Chih Li, Jackson ），現任台北市立萬芳醫院-前端工程師，畢業於臺北醫學大學醫學資訊所。碩士主要研究醫療資訊標準 - FHIR，並協助維護新北市雙和醫院內外科病房的研究相關儀器、建立該單位的研究記錄系統。"            
+                /><FormattedMessage 
+                  id="wiki.titleContent2"
+                  defaultMessage="在碩士的學習過程中，察覺自己對前端較有興趣，因此在碩二下時報名 Huli 老師的"
+                /><Links href="https://bootcamp.lidemy.com/">
+                    <FormattedMessage
+                      id="wiki.lidemy5th"
+                      defaultMessage="第五期程式導師計劃"
+                    />
+                  </Links>
+                  <FormattedMessage
+                    id="wiki.titleContent3"
+                    defaultMessage="，透過線上課程精進自己對前端的知識。"
+                  />
+              </p>
+            </WikiContent>
+            {/* personal information box */}
+            <WikipediaBox/>
+            <WikiSubTitle>
+              <FormattedMessage
+                    id="wiki.education"
+                    defaultMessage="教育程度"            
+              />  
+            </WikiSubTitle>
+            {/* education information box */}
+              <WikipediaEdu/>
+            <WikiSubTitle>
+              <FormattedMessage
+                id="wiki.workExperience"
+                defaultMessage="工作經歷"            
+              />
+            </WikiSubTitle>
+            {/* work experience information */}
+              <WikipediaExperience/>
+            <WikiSubTitle>
+              <FormattedMessage
+                id="wiki.Projects"
+                defaultMessage="資訊相關作品及練習"            
+              />
+            </WikiSubTitle>
+            {/* Projects information */}
+              <WikipediaProjects/>
+              <br/>
+            <WikiSubTitle>
+              <FormattedMessage
+                id="wiki.SkillsAndOthers"
+                defaultMessage="專長與其他經歷"            
+              />
+            </WikiSubTitle>
+            {/* Skills and others information */}
+              <WikipediaSkillsAndOthers/>
+              <br/>
+            <WikiSubTitle>
+              <FormattedMessage
+                id="wiki.Contact"
+                defaultMessage="聯絡方式"            
+              />
+            </WikiSubTitle>
+            <WikiContent>
+              E-mail：m610108008@tmu.edu.tw <br/>
+              Phone：0968090763 <br/>
+              LinkedIn : <Links href='https://www.linkedin.com/in/yc-li-7aa68315a/' target="_blank">linkedin.com/in/yc-li-7aa68315a/</Links>
+            </WikiContent>
+          </WikiMain>
+        </WikiWrapper>
+        <BottomContent><Links href="https://www.cleanpng.com/png-wikipedia-logo-encyclopedia-wikimedia-foundation-e-1334294/preview.html">logo source</Links></BottomContent>
+      </IntlProvider>
+      </>
+    </ThemeProvider>
   )
 }
