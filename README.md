@@ -2,7 +2,9 @@
 
 [Demo Link](https://jacksonnnnnnnnnnnn.github.io/ResumeOfJackson/)
 
-# Getting Started with Create React App
+An imitation Wikipedia Page with RWD and dark mode theme
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
